@@ -5,7 +5,7 @@ import matplotlib as mpl
 import numpy as np
 import warnings
 
-mpl.rcParams["font.family"] = "AppleGothic"
+# mpl.rcParams["font.family"] = "AppleGothic"
 mpl.rcParams["axes.unicode_minus"] = False
 
 st.set_page_config(
