@@ -190,8 +190,8 @@ with st.container():
                 linewidth=0.4)
 
         # 평균 및 중앙값 경계선
-        ax.axvline(boost_median, linestyle="--", linewidth=1.5, label="중앙값")
-        ax.axvline(boost_mean, linestyle=":", linewidth=1.5, label="평균값")
+        ax.axvline(boost_median, linestyle="--", linewidth=1.5, label="Median")
+        ax.axvline(boost_mean, linestyle=":", linewidth=1.5, label="Mean")
 
         # 군집 경계선 (경계값 직접 설정)
         # 군집 경계 기준 (정책적으로 명시)
@@ -201,12 +201,12 @@ with st.container():
         q_low = boost_series.quantile(LOW_Q)
         q_mid = boost_series.quantile(MID_Q)
 
-        ax.axvline(q_low, color="red", linestyle="-.", linewidth=1.5, label="저/중 경계(하위 50%)")
-        ax.axvline(q_mid, color="purple", linestyle="-.", linewidth=1.5, label="중/고 경계(상위 20%)")
+        ax.axvline(q_low, color="red", linestyle="-.", linewidth=1.5, label="Low–Mid Threshold(Bottom 50%)")
+        ax.axvline(q_mid, color="purple", linestyle="-.", linewidth=1.5, label="Mid–High Threshold(Top 20%")
 
-        ax.set_xlabel("부스트지수", fontsize=9)
-        ax.set_ylabel("게시글 수", fontsize=9)
-        ax.set_title("부스트지수 분포", fontsize=10)
+        ax.set_xlabel("Boost Scores", fontsize=9)
+        ax.set_ylabel("Number of Posts", fontsize=9)
+        ax.set_title("Distribution of Boost Scores", fontsize=10)
 
         ax.set_xticks(
             np.arange(
@@ -228,9 +228,9 @@ with st.container():
         high_center = (q_mid + x_max) / 2
 
         y_max = ax.get_ylim()[1]
-        ax.text(low_center, y_max * 0.9, "저반응", fontsize=6, ha="center")
-        ax.text(mid_center, y_max * 0.9, "중간 반응", fontsize=6, ha="center")
-        ax.text(high_center, y_max * 0.9, "고반응", fontsize=6, ha="center")
+        ax.text(low_center, y_max * 0.9, "Low Response (Bottom 50%)", fontsize=6, ha="center")
+        ax.text(mid_center, y_max * 0.9, "Medium Response (50–80%)", fontsize=6, ha="center")
+        ax.text(high_center, y_max * 0.9, "High Response (Top 20%)", fontsize=6, ha="center")
 
         st.pyplot(fig)
 
