@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+rocket_env/
+venv/
+.env/
+
+# OS
+.DS_Store
+
+# Streamlit
+.streamlit/
+
+# Data (선택: 공개 원치 않을 경우)
+# dataset/*.csv
