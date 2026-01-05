@@ -18,7 +18,7 @@ def load_data(path: str):
     df = pd.read_csv(path)
     return df
 
-df = load_data("/Users/airim/github/rocket_punch/dataset/rocket_dataset_260105.csv")
+df = load_data("dataset/rocket_dataset_260105.csv")
 
 #====================================================================================
 
