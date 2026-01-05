@@ -177,6 +177,8 @@ with st.container():
     with st.expander("**부스트지수 분포 상세 보기**"):
         fig, ax = plt.subplots(figsize=(6, 3))
 
+
+
         # 정수 중심 bin
         bins = np.arange(
             boost_series.min() - 0.5,
@@ -232,7 +234,7 @@ with st.container():
         ax.text(mid_center, y_max * 0.9, "M-R (50–80%)", fontsize=6, ha="center")
         ax.text(high_center, y_max * 0.9, "H-R (Top 20%)", fontsize=6, ha="center")
 
-        st.pyplot(fig)
+        st.pyplot(fig, use_container_width=True)
 
 
         st.subheader("구간별 계정에 따른 부스트지수 및 게시글")
