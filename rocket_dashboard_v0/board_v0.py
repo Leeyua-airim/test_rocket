@@ -201,8 +201,8 @@ with st.container():
         q_low = boost_series.quantile(LOW_Q)
         q_mid = boost_series.quantile(MID_Q)
 
-        ax.axvline(q_low, color="red", linestyle="-.", linewidth=1.5, label="Low–Mid Threshold(Bottom 50%)")
-        ax.axvline(q_mid, color="purple", linestyle="-.", linewidth=1.5, label="Mid–High Threshold(Top 20%")
+        ax.axvline(q_low, color="red", linestyle="-.", linewidth=1.5, label="Low–Mid(Bottom 50%)")
+        ax.axvline(q_mid, color="purple", linestyle="-.", linewidth=1.5, label="Mid–High(Top 20%)")
 
         ax.set_xlabel("Boost Scores", fontsize=9)
         ax.set_ylabel("Number of Posts", fontsize=9)
@@ -228,9 +228,9 @@ with st.container():
         high_center = (q_mid + x_max) / 2
 
         y_max = ax.get_ylim()[1]
-        ax.text(low_center, y_max * 0.9, "Low Response (Bottom 50%)", fontsize=6, ha="center")
-        ax.text(mid_center, y_max * 0.9, "Medium Response (50–80%)", fontsize=6, ha="center")
-        ax.text(high_center, y_max * 0.9, "High Response (Top 20%)", fontsize=6, ha="center")
+        ax.text(low_center, y_max * 0.9, "L-R (Bottom 50%)", fontsize=6, ha="center")
+        ax.text(mid_center, y_max * 0.9, "M-R (50–80%)", fontsize=6, ha="center")
+        ax.text(high_center, y_max * 0.9, "H-R (Top 20%)", fontsize=6, ha="center")
 
         st.pyplot(fig)
 
